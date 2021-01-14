@@ -39,8 +39,10 @@
                                     <select class="form-control" id="roleid" name="roleid" value="{{ $users->role_id }}">
                                         @if ($users->role_id === 1)
                                             <option value="1">1-admin</option>
+                                            <option value="2">2-user</option>
                                         @else
                                             <option value="2">2-user</option>
+                                            <option value="1">1-admin</option>
                                         @endif
                                     </select>
                                 </div>
