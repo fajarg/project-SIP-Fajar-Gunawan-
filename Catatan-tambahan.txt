@@ -1,0 +1,10 @@
+Pada pembuatan table saya saat migration dan seeder 
+yang saya proses pertama kali adalah tabel roles
+baru setelah itu saya proses tabel users
+karena pada dua tabel tersebut ada keterkaitan 
+foreign key role_id pada tabel user mengacu pada id dari tabel roles 
+
+**jadi jika misalnya saat migration ataupun seeder terdapat masalah
+tidak bisa dilakukan sekaligus seperti kasus saya. 
+migration dan seeder bisa dilakukan manual dengan urutan tabel roles terlebih
+dahulu baru kemudian tabel users
