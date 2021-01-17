@@ -26,6 +26,7 @@
 
 </head>
 <body>
+    
         <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -91,7 +92,7 @@
 
                                 <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+                                <a class="nav-link" href="{{ route('logout') }}"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 

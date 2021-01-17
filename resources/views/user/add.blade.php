@@ -1,18 +1,16 @@
-@extends('main')
+@extends('layouts.app')
 
 @section('title', 'Users')
 
+
 @section('breadcrumbs')
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Add Data</h1>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Add</li>
+        </ol>
+    </nav>
 @endsection
+
 
 @section('content')
     <div class="content mt-3">
@@ -36,6 +34,7 @@
                                 <div class="form-group" >
                                     <label for="role-id">Select role id :</label>
                                     <select class="form-control" id="role-id" name="roleid">
+                                        <option selected>Choose...</option>
                                         <option value="1">1 - admin</option>
                                         <option value="2">2 - user</option>
                                       </select>

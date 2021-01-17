@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function data(){
         $users = DB::table('users')->get();
 
@@ -24,7 +30,7 @@ class UserController extends Controller
             'name' =>  $request->nama,
             'username' =>  $request->usernama,
             'email' =>  $request->email,
-            'password' =>  $request->password,
+            'password' =>  Hash::make($request->password),
             'created_at' =>  $request->create,
             'updated_at' =>  $request->update,
             ]
@@ -45,7 +51,7 @@ class UserController extends Controller
             'name' =>  $request->nama,
             'username' =>  $request->usernama,
             'email' =>  $request->email,
-            'password' =>  $request->password,
+            'password' => $request->password,
             'created_at' =>  $request->create,
             'updated_at' =>  $request->update,
         ]);
@@ -56,5 +62,11 @@ class UserController extends Controller
         DB::table('users')->where('id', $id)->delete();
 
         return redirect('user')->with('status', 'Data was deleted');
+    }
+
+    public function detail($id) {
+        $users = DB::table('users')->where('id', $id)->first();
+        // dd($users);
+        return view('user/detail', compact('users'));
     }
 }

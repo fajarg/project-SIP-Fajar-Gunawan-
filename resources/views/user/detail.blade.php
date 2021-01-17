@@ -5,9 +5,9 @@
 @section('breadcrumbs')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Edit</li>
+        <li class="breadcrumb-item active" aria-current="page">Detail</li>
         </ol>
-    </nav>     
+    </nav>
 @endsection
 
 @section('content')
@@ -31,8 +31,8 @@
                                 @method('patch')
                                 @csrf
                                 <div class="form-group" >
-                                    <label for="roleid">Select role id :</label>
-                                    <select class="form-control" id="roleid" name="roleid" value="{{ $users->role_id }}">
+                                    <label for="roleid">Role id :</label>
+                                    <select class="form-control" id="roleid" name="roleid" value="{{ $users->role_id }}" disabled>
                                         @if ($users->role_id === 1)
                                             <option value="1">1-admin</option>
                                             <option value="2">2-user</option>
@@ -44,31 +44,30 @@
                                 </div>
                                 <div class="form-group" >
                                     <label for="nama">Name :</label>
-                                    <input type="text" name="nama" class="form-control" placeholder="name..." id="nama" value="{{ $users->name }}" required>
+                                    <input type="text" name="nama" class="form-control" placeholder="name..." id="nama" value="{{ $users->name }}" required disabled>
                                 </div>
                                 <div class="form-group" >
                                     <label for="usernama">Username :</label>
-                                    <input type="text" name="usernama" class="form-control" placeholder="username..." id ="usernama" value="{{ $users->username }}" required>
+                                    <input type="text" name="usernama" class="form-control" placeholder="username..." id ="usernama" value="{{ $users->username }}" required disabled>
                                 </div>
                                 <div class="form-group" >
                                     <label for="email">Email :</label>
-                                    <input type="email" name="email" class="form-control" placeholder="name@example.com" id ="email" value="{{ $users->email }}" required>
+                                    <input type="email" name="email" class="form-control" placeholder="name@example.com" id ="email" value="{{ $users->email }}" required disabled>
                                 </div>
                                 <div class="form-group" >
                                     {{-- <label for="password">Password :</label> --}}
-                                    <input type="hidden" name="password" class="form-control" placeholder="password..." id ="password" value="{{ $users->password }}" required>
+                                    <input type="hidden" name="password" class="form-control" placeholder="password..." id ="password" value="{{ $users->password }}" required disabled>
                                 </div>
                                 <div class="form-group" >
                                     <label for="create">Created at :</label>
-                                    <input type="text" name="create" class="form-control" id="create" value="{{ $users->created_at }}">
+                                    <input type="text" name="create" class="form-control" id="create" value="{{ $users->created_at }}" disabled>
                                 </div>
                                    
                                 <div class="form-group" >
                                     <label for="update">Updated at :</label>
-                                    <input type="text" name="update" class="form-control"  id="update" value="<?php echo date("Y-m-d H:i:s");?>">
+                                    <input type="text" name="update" class="form-control"  id="update" value="<?php echo date("Y-m-d H:i:s");?>" disabled>
                                 </div>
-                                <br>
-                                <button type="submit" class="btn btn-success">Save</button>
+                                
                             </form>
                        </div>
                     </div>   

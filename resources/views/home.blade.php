@@ -1,32 +1,32 @@
-@extends('main')
-
-@section('title', 'Dashboard')
+@extends('layouts.app')
 
 @section('breadcrumbs')
-    <div class="breadcrumbs">
-        <div class="col-sm-4">
-            <div class="page-header float-left">
-                <div class="page-title">
-                    <h1>Dashboard</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <div class="page-header float-right">
-                <div class="page-title">
-                    <ol class="breadcrumb text-right">
-                        <li class="active"><i class="fa fa-dashboard"></i></li>
-                    </ol>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+    </nav>
+@endsection
+
+@section('content')
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-white bg-dark mb-3">
+                <div class="card-header"><h5>{{ __('Dashboard') }}</h5></div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                   <h5>Welcome {{ Auth::user()->name }} {{ __(', You are logged in!') }}</h5>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-
-@section('content')
-    <div class="content mt-3">
-        <div class="animated fadeIn">
-            Isi Home
-        </div><!-- .animated -->
-    </div><!-- .content -->
+</div>
 @endsection
