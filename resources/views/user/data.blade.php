@@ -20,7 +20,11 @@
             @endif
 
             <div class="card">
-                <div class="card-header">
+            <div>
+                <h5 class="mt-3 ml-3"></h5>
+            </div>
+
+                <div class="card-header mt-3">
                 @if ( Auth::user()->role_id === 1 )
                     <div class="pull-right">
                         <a href="{{ url('user/add') }}" class="btn btn-success btn-sm">
@@ -30,7 +34,7 @@
                 @endif
                 </div>
                 <div class="card-body table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="tbl1">
                         <thead>
                             <tr class="text-center">
                                 <th>No.</th>
@@ -84,6 +88,10 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="row justify-content-center">
+                    {{ $users->links() }}
+                </div>
+        
             </div>
 
             

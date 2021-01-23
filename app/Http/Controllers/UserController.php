@@ -14,7 +14,7 @@ class UserController extends Controller
     }
     
     public function data(){
-        $users = DB::table('users')->get();
+        $users = DB::table('users')->paginate(5);
 
         return view('user.data', ['users' => $users]);   
     }

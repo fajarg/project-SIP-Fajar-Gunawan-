@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Users')
+@section('title', 'Add Users')
 
 
 @section('breadcrumbs')
@@ -15,7 +15,11 @@
 @section('content')
     <div class="content mt-3">
         <div class="animated fadeIn">
-
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
            
 
             <div class="card">

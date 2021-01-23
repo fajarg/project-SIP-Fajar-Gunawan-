@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Home')
+
 @section('breadcrumbs')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -10,10 +12,10 @@
 
 @section('content')
 
-<div class="container mt-3">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-white bg-dark mb-3">
+            <div class="card text-white bg-dark mt-3">
                 <div class="card-header"><h5>{{ __('Dashboard') }}</h5></div>
 
                 <div class="card-body">

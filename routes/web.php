@@ -32,6 +32,25 @@ Route::get('user/detail/{id}', 'UserController@detail');
 
 Route::get('posting/post', 'PostController@index');
 
+Route::post('posting/store', 'PostController@store');
+Route::get('posting/create', 'PostController@create');
+
+Route::get('posting/{post:title}/edit', 'PostController@edit');
+Route::patch('posting/{post:title}/edit', 'PostController@update');
+
+Route::delete('posting/{post:title}/delete', 'PostController@delete');
+Route::delete('posting/post', 'PostController@deleteCheck');
+
+Route::get('posting/{post:title}/download', 'PostController@download');
+
+Route::post('posting/import', 'PostController@import');
+
+Route::post('posting/post', 'PostController@filter');
+
+Route::get('posting/export', 'PostController@export');
+
+Route::get('posting/{post:title}', 'PostController@show');
+
 
 Auth::routes();
 
